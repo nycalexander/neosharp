@@ -2,9 +2,7 @@
 
 <p align="center">
 An adaptation of
-<a href="https://github.com/dylanaraps/neofetch">
-  <img align="center" src="neofetch.svg" />
-</a>
+<img align="center" src="neofetch.svg" />
 made in C#
 </p>
 
