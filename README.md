@@ -15,8 +15,6 @@ made in C#
 <img src="screenshot.PNG" alt="neofetch" align="right" height="280px">
 
 <br/>
-<br/>
-<br/>
 
 Command-line utility developed in `C# .NET 8.0`, designed to provide comprehensive and aesthetically formatted system diagnostics. It delivers a streamlined overview of essential system parameters for users seeking an efficient, visually engaging representation of system specifications.
 
