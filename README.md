@@ -3,7 +3,7 @@
 <p align="center">
 An adaptation of
 <a href="https://github.com/dylanaraps/neofetch">
-  <img align="center" src="https://raw.githubusercontent.com/nycalexander/neosharp/main/neofetch.svg" />
+  <img align="center" src="neofetch.svg" />
 </a>
 made in C#
 </p>
