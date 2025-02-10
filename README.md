@@ -14,7 +14,7 @@ made in C#
 
 #
 
-<img src="screenshot.PNG" alt="neofetch" align="right" height="280px">
+<img src="screenshot.PNG" alt="neofetch" align="right" height="280px" width="588px">
 
 <br/>
 
