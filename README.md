@@ -1,7 +1,11 @@
 <h3 align="center"><img src="banner.png" alt="logo" height="100px"></h3>
 
 <p align="center">
-An adaptation of <a href="https://github.com/dylanaraps/neofetch">neofetch</a> made in C#
+An adaptation of
+<a href="https://github.com/dylanaraps/neofetch">
+  <img align="center" src="https://raw.githubusercontent.com/nycalexander/neosharp/main/neofetch.svg" />
+</a>
+made in C#
 </p>
 
 <p align="center">
