@@ -18,7 +18,7 @@ made in C#
 
 <br/>
 
-Command-line utility developed in `C# .NET 8.0`, designed to provide comprehensive and aesthetically formatted system diagnostics. It delivers a streamlined overview of essential system parameters for users seeking an efficient, visually engaging representation of system specifications.
+Command-line utility developed in `C# .NET 8.0`, designed to provide comprehensive and aesthetically formatted system specifications. It delivers a streamlined overview of essential system parameters for users seeking an efficient, visually engaging representation of system specifications.
 
 # 
 - **Platform Support**: Currently compatible with Windows 10/11; possible future iterations may extend support to Linux and other operating systems.
