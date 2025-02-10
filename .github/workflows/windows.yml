@@ -1,0 +1,68 @@
+name: .NET 8.0 Windows
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+permissions:
+  contents: write
+
+jobs:
+
+  build:
+
+    strategy:
+      matrix:
+        configuration: [Debug]
+
+    runs-on: windows-latest  # For a list of available runner types, refer to
+                             # https://help.github.com/en/actions/reference/workflow-syntax-for-github-actions#jobsjob_idruns-on
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+
+    - name: Install .NET
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: 8.0.x
+
+    - name: Setup MSBuild.exe
+      uses: microsoft/setup-msbuild@v2
+
+    - name: Find .csproj file
+      shell: pwsh
+      run: |
+        echo "Searching for .csproj file..."
+        $csproj_file = Get-ChildItem -Recurse -Filter "*.csproj" | Select-Object -First 1
+        echo "Found .csproj file: $($csproj_file.FullName)"
+        echo "csproj_file=$($csproj_file.FullName)" >> $env:GITHUB_ENV
+        
+    - name: Publish application
+      shell: cmd
+      run: dotnet publish -p:PublishSingleFile=true --self-contained false -o %cd%\publish\
+
+    - name: Upload build artifacts
+      uses: actions/upload-artifact@v4
+      with:
+        name: ZIP Build
+        path: .\publish\
+
+    - name: Setup 7-Zip
+      uses: milliewalky/setup-7-zip@v1
+
+    - name: Archive published application
+      shell: cmd
+      run: 7z a build.zip .\publish\*
+  
+    - name: Release build artifact
+      uses: softprops/action-gh-release@v2
+      with:
+        files: build.zip
+        tag_name: artifact-build
+        token: ${{ secrets.GITHUB_TOKEN }}
+
